@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>School/College List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel = "icon" href = "https://i.pinimg.com/originals/8e/81/fc/8e81fce56cee548c7cc44d1a985657b7.png" type = "image/x-icon">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <header>
+          <img src="https://i.pinimg.com/originals/8e/81/fc/8e81fce56cee548c7cc44d1a985657b7.png">
+          <h1>School/College List</h1>
+      </header>
+      <div class="container">
+          <div class="listTabs">
+              <div class="listTab_header">
+                <span>Schools</span>
+              </div>
+              {% for school in schools %}
+              <div class="content_container">
+                  <div>
+                      <h3>{{ school.school_name }}</h3>     
+                  </div>
+                  <div>
+                      <h3>{{ school.established }}</h3>   
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+          <div class="listTabs">
+              <div class="listTab_header">
+                <span>Colleges</span>
+              </div>
+              {% for college in colleges %}
+              <div class="content_container">
+                  <div>
+                      <h3>{{ college.college_name }}</h3>     
+                  </div>
+                  <div>
+                      <h3>{{ college.established }}</h3>   
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+  </body>
+</html>
