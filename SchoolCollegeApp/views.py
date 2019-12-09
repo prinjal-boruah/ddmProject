@@ -32,7 +32,7 @@ def login(request):
 
 #--------------User Registration-------------------------------------------------
 @api_view(['POST'])
-@permission_classes((IsAuthenticated,))
+@permission_classes((AllowAny,))
 def Register(request):
     username = request.data.get("username")
     password = request.data.get("password")
